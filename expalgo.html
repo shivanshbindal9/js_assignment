@@ -8,14 +8,28 @@
     background-color: #f1f1f1;
     margin-left: 500px;
 }
+button.one{
+    margin-left:620px;
+
+}
+p{
+    margin-left: 660px;
+    font-size: 24px;
+    color:"red";
+
+}
 </style>
 </head>
-<body onload="startGame()">
-     <button onmousedown="moveleft()" onmouseup="stopMove()" ontouchstart="moveleft()">LEFT</button>
+<body onload="startGame()"><br>
+     <button onmousedown="moveleft()" onmouseup="stopMove()" class="one" ontouchstart="moveleft()">LEFT</button>
      <button onmousedown="moveright()" onmouseup="stopMove()" ontouchstart="moveright()">RIGHT</button>
-</body>
+          <button onclick="location.reload()">Restart</button>
+          <p id="score"> </p>
+
+</body >  
 <script type="text/javascript">
-	var ball;
+    var ball;
+    var Timer=0;
     var myObstacles = [];
 	function startGame(){
       GameArea.start();
@@ -62,6 +76,11 @@ var GameArea = {
 
    this.newPos = function() {
    // this.gravitySpeed += this.gravity;
+   if(this.x<0)
+    this.speedX=1;
+else if(this.x>380)
+    this.speedX=-1;
+
         this.x += this.speedX;
         //this.y += this.speedY; 
         this.speedY = .2; 
@@ -71,10 +90,14 @@ var GameArea = {
  }
   this.newPos2 = function() {
    // this.gravitySpeed += this.gravity;
+    if(this.x<0)
+    this.speedX=1;
+   else if(this.x>380)
+    this.speedX=-1;
         this.x += this.speedX;
         //this.y += this.speedY; 
         this.speedY = 0; 
-        this.y -= 7;
+        this.y -= 21;
        
  }
  this.crashWith = function(otherobj) {
@@ -115,8 +138,9 @@ var GameArea = {
     }
 
         GameArea.clear();
+        timer();
          GameArea.frameNo += 1;
-    if (GameArea.frameNo == 1 || everyinterval(150)) {
+    if (GameArea.frameNo == 1 || everyinterval(50)) {
        
         y = GameArea.canvas.height ;
         minWidth = 20;
@@ -129,12 +153,13 @@ var GameArea = {
         
 
     for (i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].y += -1;
+        myObstacles[i].y += -3;
         myObstacles[i].update();
     }
 
     for (i = 0; i < myObstacles.length; i += 1) {
         if (ball.crashWith(myObstacles[i])) {
+        
            ball.newPos2(); 
             }
             else
@@ -165,6 +190,16 @@ function moveright() {
 function stopMove() {
     ball.speedX = 0;
     ball.speedY = 0; 
+}
+
+//setInterval(timer,1000);
+function timer()
+{
+    
+    Timer++;
+    //console.log(Timer);
+    document.getElementById("score").innerHTML="score:    "  +  Timer;
+
 }
 </script>
 </html>
