@@ -1,0 +1,51 @@
+<!doctype html><html>
+<head>
+<title>Blank Page</title>
+<script>
+	function validateForm() {
+    var x = document.forms["myForm"]["email"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+    var pattern="[0-9]{10}";
+    var str = document.forms["myForm"]["phone"].value;
+    if (!str.match(pattern))
+    {
+    	alert("wrong phone number");
+    	return false;
+    }
+    var ps = document.forms["myForm"]["pass"].value;
+     var cf = document.forms["myForm"]["confirm"].value;
+     if(ps!=cf)
+     {
+     alert("wrong password");
+    	return false;
+     }
+}
+	</script>
+</head>
+<body>
+	<form name="myForm" onsubmit="return validateForm();">
+  - educational qualification :<select name="education" required>
+    <option value="B.Tech">B.Tech</option>
+    <option value="12 th ">12 th </option>
+    <option value="10 th">10 th</option>
+    <option value="other">other</option>
+  </select>
+  <br>- phone number :<input type="number" name="phone" required>
+  <br>- age:<input type="number" name="age" required>
+  <br>- gender:<input type="text" name="gender" required>
+  <br>- email:<input type="text" name="email" required>
+  <br>- password:<input type="password" name="pass" required>
+  <br>- confirm password:<input type="password" name="confirm" required>
+  
+  <br>- name:<input type="text" name="name"  required>
+  <br>- city:<input type="text" name="name" required>
+  <input type="submit" value="Submit">
+
+	</form>
+</body>
+</html>

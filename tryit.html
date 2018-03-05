@@ -1,0 +1,31 @@
+<!doctype html><html>
+<head>
+<title>Blank Page</title>
+<script>
+	var pattern = "^\w+@[a-zA-Z_]+\.[a-zA-Z]{2,3}$"; 
+//var pattern="[a-zA-Z]+";
+function isEmailAddress() {
+     var str = document.forms["myForm"]["email"].value;
+    //str = "azamsharp@gmail.com";  
+  // var str= document.getElementById("shi").value ;
+    if (!str.match(pattern))
+    {
+    	alert("wrong");
+    	return false;
+    }
+   // alert(str.match(pattern)); 
+    //return str.match(pattern);    
+
+}
+
+	</script>
+</head>
+<body>
+	<form name="myForm" onsubmit="return isEmailAddress();">
+		<input type="text" id="shi" name="email" >
+		
+	</form>
+</body>
+</html>
+
+

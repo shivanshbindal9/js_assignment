@@ -1,0 +1,113 @@
+
+<!doctype html><html>
+<head>
+<title>Marbles | JavaScript</title>
+<meta name="keywords" content="javascript resources examples program code samples information introduction beginner newbie novice learn help exercise assignment">
+<meta name="description" content="Assignment for beginners learning JavaScript.">
+<link rel="stylesheet" href="/styles/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/styles/javascript.css" type="text/css" media="screen" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<script src="/scripts/javascript.js"></script>
+</head>
+<body>
+
+<div id="outerWrapper"><div id="innerWrapper">
+
+<script>
+writeHeader()
+</script>
+
+<div id="content">
+
+	<h2>JavaScript Materials</h2>
+	
+	<h1>Marbles</h1>
+
+<table>
+
+
+<tr valign="top" align="center"><td>
+<img src="http://www.webhammer.com/javascript/materials/marble1.jpg" onmouseover=" clearTimeout(timer)" onmouseout="changeIt()" name="b1">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<img src="http://www.webhammer.com/javascript/materials/marble1.jpg" onmouseover=" clearTimeout(timer)" onmouseout="changeIt()" name="b2">
+</td></tr>
+
+<tr valign="top" align="center"><td>
+&nbsp;<br><br>
+</td></tr>
+
+
+<tr valign="top" align="center"><td>
+<img src="http://www.webhammer.com/javascript/materials/marble1.jpg" onmouseover=" clearTimeout(timer)" onmouseout="changeIt()" name="b3">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<img src="http://www.webhammer.com/javascript/materials/marble1.jpg" onmouseover=" clearTimeout(timer)" onmouseout="changeIt()" name="b4">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<img src="http://www.webhammer.com/javascript/materials/marble1.jpg" onmouseover=" clearTimeout(timer)" onmouseout="changeIt()" name="b5">
+</td></tr>
+
+<tr valign="top" align="center"><td>
+&nbsp;<br><br>
+</td></tr>
+
+
+
+<tr valign="top" align="center"><td>
+<img src="http://www.webhammer.com/javascript/materials/marble1.jpg" onmouseover=" clearTimeout(timer)" onmouseout="changeIt()" name="b6">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<img src="http://www.webhammer.com/javascript/materials/marble1.jpg" onmouseover=" clearTimeout(timer)" onmouseout="changeIt()" name="b7">
+</td></tr>
+<!--<button onclick="changeIt()" value="start"></button>-->
+
+
+</table>
+
+</div>
+
+<script>
+var whichImage = 0
+
+function changeIt() {
+
+	++whichImage
+
+	if (whichImage == 1) {
+		document.b1.src = "ball.jpg"
+		document.b3.src ="http://www.webhammer.com/javascript/materials/marble1.jpg"
+	}
+	else if (whichImage == 2) {
+		document.b2.src = "ball.jpg"
+		document.b1.src = "http://www.webhammer.com/javascript/materials/marble1.jpg"
+	}
+	else if (whichImage == 3) {
+		document.b5.src = "ball.jpg"
+		document.b2.src = "http://www.webhammer.com/javascript/materials/marble1.jpg"
+	}
+	else if (whichImage == 4) {
+		document.b7.src = "ball.jpg"
+		document.b5.src = "http://www.webhammer.com/javascript/materials/marble1.jpg"
+	}
+	else if (whichImage == 5) {
+		document.b6.src = "ball.jpg"
+		document.b7.src = "http://www.webhammer.com/javascript/materials/marble1.jpg"
+	}
+	else {
+		document.b3.src = "ball.jpg"
+		document.b6.src = "http://www.webhammer.com/javascript/materials/marble1.jpg"
+		whichImage = 0
+	}
+	timer=setTimeout("changeIt()",1000)
+}
+</script>
+   
+</div></div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html><html>
+<head>
+<title>Blank Page</title>
+</head>
+<body>
+	<!--<a href="https://www.google.co.in/?gfe_rd=cr&dcr=0&ei=XF54WuqaKeXBXpvOgfAJ" id="demo" target="_blank">-->
+		<img src="img.jpg" alt="sorry" onclick="openSW()">
+	<
+	<form>
+		<input type="button" value="close" onclick="closeSW()">
+	</form>
+</body>
+<script>
+	var subWindow
+
+function openSW() {
+
+	subWindow = window.open("https://www.google.co.in/?gfe_rd=cr&dcr=0&ei=DWJ4WvnrLuvBXuGJiNgE","example","height=300,width=300,left=100,top=100,resizable=no,toolbar=no,scrollbars=no,status=no,location=no")
+
+}
+
+function closeSW() {
+
+	subWindow.close()
+		
+}
+
+	</script>
+</html>

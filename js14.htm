@@ -1,0 +1,33 @@
+<!doctype html><html>
+<head>
+<title>Blank Page</title>
+<script>
+	var z=0;
+	function countf()
+	{
+		z+=1;
+		console.log(z);
+	
+	//console.log(z);
+	if(z==4)
+	{
+		document.getElementById("abc").src="down.jpg";
+	}
+	if(z==8)
+	{
+		document.getElementById("abc").src="images.png";
+	}
+	if(z==12)
+	{
+		document.getElementById("abc").src="download.png";
+	}
+	if(z==16)
+	{
+		document.getElementById("abc").src="img.jpg";
+	}}
+	</script>
+</head>
+<body>
+	<img src="fb.jpg" alt="facebook" id="abc" onclick="countf()">
+</body>
+</html>
